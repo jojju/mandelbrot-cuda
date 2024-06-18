@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html style="background: #223">
+
+<body style="margin: 0">
+    <script>
+        // Listen to keypresses and send them to the server
+        document.body.addEventListener('keypress', function (e) {
+            var key = e.key;
+            fetch('/keypress', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ key: key }),
+            })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+    <img src="/video_feed" style="width: 1040px; height: 720px">
+    </img>
+</body>
+
+</html>
