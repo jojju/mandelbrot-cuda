@@ -31,8 +31,8 @@ class State:
 
 
 MANDELBROT_MAX_ITERATIONS = 1024
-WIDTH = 512
-HEIGHT = 360
+WIDTH = 960
+HEIGHT = 640
 ZOOM_PAN_CHANGE = 0.014
 max_FPS = 10
 color_img = np.zeros((HEIGHT, WIDTH), dtype=np.uint8)
@@ -117,7 +117,6 @@ def run():
         color_img = cv2.applyColorMap(host_img * 3, cv2.COLORMAP_TURBO)
 
         # cv2.imshow("mandelbrot", color_img)
-        # cv2.imwrite("test.jpg", color_img)
 
         # Limit the FPS
         time_passed = timer() - start_time
